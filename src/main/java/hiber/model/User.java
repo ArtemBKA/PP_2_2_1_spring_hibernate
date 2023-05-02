@@ -72,4 +72,8 @@ public class User {
       this.car = car;
    }
 
+   @Override
+   public String toString() {
+      return "Id = " + id + "\n" + "First Name = " + firstName + "\n" + "Last Name = " + lastName + "\n" + "Email = " + email + "\n";
+   }
 }
