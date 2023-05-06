@@ -1,7 +1,6 @@
 package hiber.service;
 
 import hiber.dao.UserDao;
-import hiber.model.Car;
 import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +24,14 @@ public class UserServiceImp implements UserService {
       userDao.add(user);
    }
 
+   /**
+    * Без @Transactional получаю:
+    * Could not obtain transaction-synchronized Session for current thread
+    * */
    @Override
-   public User get(Car car) {
-      return userDao.get(car);
+   @Transactional
+   public User getUserByCar(String model, Integer series) {
+      return userDao.getUserByCar(model, series);
    }
 
    @Transactional(readOnly = true)

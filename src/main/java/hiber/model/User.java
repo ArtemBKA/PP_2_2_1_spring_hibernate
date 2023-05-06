@@ -3,9 +3,8 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users_table")
 public class User {
-
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
@@ -74,6 +73,6 @@ public class User {
 
    @Override
    public String toString() {
-      return "Id = " + id + "\n" + "First Name = " + firstName + "\n" + "Last Name = " + lastName + "\n" + "Email = " + email + "\n";
+      return "Id = " + id + "\n" + "First Name = " + firstName + "\n" + "Last Name = " + lastName + "\n" + "Email = " + email + "\n" + "Car = " + car + "\n";
    }
 }
